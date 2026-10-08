@@ -1,0 +1,3 @@
+import type {Metadata} from "next";import "./globals.css";
+export const metadata:Metadata={title:"Lucky 777 Cartoon Slots",description:"A playful five-reel HTML5 slot game with 20 animated paylines.",icons:{icon:"/favicon.svg"},openGraph:{title:"Lucky 777 Cartoon Slots",description:"5 reels, 20 animated paylines and colorful cartoon effects.",images:["https://lucky-777-cartoon-slots.vinbabylon90.chatgpt.site/og.png"]},twitter:{card:"summary_large_image",title:"Lucky 777 Cartoon Slots",description:"5 reels, 20 animated paylines and colorful cartoon effects.",images:["https://lucky-777-cartoon-slots.vinbabylon90.chatgpt.site/og.png"]}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}

@@ -1,0 +1,67 @@
+@import "tailwindcss";
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#090525}body,button{font-family:Arial Black,Arial,sans-serif;color:#fff}.game{min-height:100vh;position:relative;overflow:hidden;padding:16px clamp(10px,3vw,40px) 28px;background:radial-gradient(circle at 50% 30%,#682bb5,#251061 40%,#090525 78%)}.game:before{content:"";position:absolute;inset:0;opacity:.16;background:repeating-conic-gradient(from 0deg at 50% 48%,transparent 0 8deg,#bd5cff 9deg 12deg,transparent 13deg 22deg)}.stars{position:absolute;inset:0;opacity:.8;background-image:radial-gradient(circle,#fff 0 2px,transparent 3px),radial-gradient(circle,#ffc83d 0 2px,transparent 3px);background-size:170px 140px,230px 190px;background-position:20px 30px,100px 80px}
+header{position:relative;z-index:2;max-width:1240px;margin:auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px}h1{margin:0;padding:8px 38px;color:#ffd84f;font-size:clamp(30px,5vw,68px);line-height:1;letter-spacing:-4px;text-shadow:0 5px #a34300,0 9px #4c155d,0 0 18px #ffb300;border:5px solid #fbc735;border-radius:50%;background:linear-gradient(#9b36e8,#4d0a87);box-shadow:inset 0 0 0 5px #db2f72,0 8px #6c176a}h1 em{color:#ff3838;font-style:normal}.counter{justify-self:start;min-width:160px;padding:8px 22px;text-align:center;border:4px solid #ffd34f;border-radius:24px;background:linear-gradient(#162a53,#07122d);box-shadow:0 5px #9a4d08}.counter small{display:block}.counter b{color:#ffe52f;font-size:28px}.right{justify-self:end;display:flex;align-items:center;gap:12px}.right .counter{min-width:115px}.sound{width:64px;height:64px;border:4px solid #c079ff;border-radius:50%;font-size:28px;background:linear-gradient(#8a43df,#421091);box-shadow:0 5px #24034f;cursor:pointer}
+.machine{z-index:2;position:relative;max-width:1100px;margin:30px auto 0;padding:18px;border:8px solid #ffc83d;border-radius:58px 58px 34px 34px;background:linear-gradient(115deg,#ff3e35,#9c1228);box-shadow:inset 0 0 0 7px #a10b3e,0 14px #4b093f,0 22px 35px #0009}.window{position:relative;overflow:hidden;border:9px solid #18131d;border-radius:30px;background:#fff5dd;box-shadow:inset 0 0 25px #7d461e99,0 0 0 5px #ffe071}.reels{display:grid;grid-template-columns:repeat(5,1fr);min-height:390px}.reel{display:grid;grid-template-rows:repeat(3,1fr);border-right:3px solid #875f3d}.reel:last-child{border:0}.symbol{display:grid;place-items:center;min-width:0;border-bottom:2px solid #d8bd92;color:#1e1931;font-size:clamp(30px,5vw,68px);line-height:1;text-shadow:0 3px #fff;background:linear-gradient(#fffaf0,#f0ddbd)}.symbol:last-child{border:0}.seven{color:#ef2727;font-size:clamp(50px,8vw,98px);font-style:italic;text-shadow:3px 3px #8b0808,-2px -2px #ffd973}.bar{font-size:clamp(18px,3.6vw,47px);color:#fff;text-shadow:3px 3px #000;background:linear-gradient(#fffaf0,#f0ddbd)}.bar:after{content:"";position:absolute}.diamond{color:#23cfff;text-shadow:0 4px #087aa9}.rolling .symbol{animation:blur .18s linear infinite}@keyframes blur{50%{transform:translateY(12px) scaleY(.85);filter:blur(2px)}}.overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.overlay polyline{fill:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 7px #fff);stroke-dasharray:28 13;animation:run .7s linear infinite}@keyframes run{to{stroke-dashoffset:-41}}.lever{position:absolute;right:-66px;top:28%;width:70px;height:140px;border-radius:20px;background:#d88a09;border:5px solid #ffd85b}.lever i{position:absolute;width:16px;height:105px;left:38px;top:-78px;background:linear-gradient(90deg,#a94c04,#ffe266);transform:rotate(12deg);border-radius:10px}.lever b{position:absolute;width:56px;height:56px;left:18px;top:-108px;border-radius:50%;border:5px solid #ff9a28;background:radial-gradient(circle at 35% 30%,#ff8b73,#d20d17 55%,#78030a)}.jackpot{position:absolute;left:-120px;bottom:28px;z-index:4;padding:13px;color:#ffd255;text-align:center;border:5px solid #ffc83d;border-radius:18px;background:#75117f;box-shadow:0 0 0 6px #b8338c}
+.result{position:relative;z-index:3;min-height:34px;margin:14px auto 5px;text-align:center;color:#cab7ff;font-size:clamp(14px,2vw,21px);letter-spacing:2px}.won{color:#ffe944;animation:pulse .55s infinite alternate}@keyframes pulse{to{transform:scale(1.04);text-shadow:0 0 18px #ffdf00}}.controls{position:relative;z-index:3;display:flex;justify-content:center;align-items:center;gap:clamp(7px,2vw,22px);max-width:900px;margin:auto;padding:13px 17px;border:5px solid #b85aff;border-radius:34px;background:linear-gradient(#4d127e,#280442);box-shadow:0 8px #150025}.controls button{width:105px;min-height:78px;color:#fff;cursor:pointer;border:4px solid #ffd34f;border-radius:21px;background:linear-gradient(#a546f0,#5f1fc3);box-shadow:inset 0 0 0 3px #ffffff44,0 6px #160324;text-shadow:0 3px #301258}.controls button:nth-child(even){background:linear-gradient(#31b8ff,#1761c9)}.controls .spin{min-width:260px;padding:14px 35px;border-radius:50px;background:linear-gradient(#ff634c,#c91123);font-size:clamp(34px,5vw,62px);line-height:1}.controls button:active{transform:translateY(5px);box-shadow:0 1px #160324}.controls button:disabled{filter:grayscale(.7)}.controls .on{box-shadow:inset 0 0 20px #8aff8a,0 6px #160324}.lineToggle{position:relative;z-index:3;display:block;margin:14px auto 0;padding:9px 22px;color:#e7dcff;border:2px solid #8a5ac0;border-radius:99px;background:#160a39bb;cursor:pointer}.lineToggle b{color:#ffe83d;font-size:20px;padding:0 8px}
+.shade{position:fixed;z-index:20;inset:0;display:grid;place-items:center;padding:20px;background:#08031eea}.paytable{position:relative;width:min(850px,95vw);max-height:90vh;overflow:auto;padding:27px;border:5px solid #ffc83d;border-radius:28px;background:linear-gradient(#4f1681,#1d0939);box-shadow:0 0 45px #9f41ff}.paytable h2{margin:0;color:#ffe551;font-size:36px;text-align:center}.paytable p{text-align:center;font-family:Arial,sans-serif}.close{position:absolute;right:14px;top:7px;color:#fff;border:0;background:none;font-size:42px;cursor:pointer}.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:18px}.card{position:relative;aspect-ratio:5/3;border:2px solid #8e65c0;border-radius:9px;background:#100725}.card span{position:absolute;z-index:2;left:5px;top:3px;font-size:12px}.card svg{width:100%;height:100%}.card polyline{fill:none;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}.values{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:18px}.values span{padding:8px 11px;border-radius:11px;background:#ffffff18}
+@media(max-width:760px){.game{padding:8px 7px 18px}header{grid-template-columns:1fr 1fr;gap:7px}h1{grid-column:1/-1;grid-row:1;justify-self:center;padding:6px 22px;letter-spacing:-2px}.counter{grid-row:2;min-width:125px;padding:4px 9px}.right{grid-row:2}.sound{width:50px;height:50px;font-size:21px}.machine{margin-top:16px;padding:8px;border-width:5px;border-radius:24px}.window{border-width:5px;border-radius:14px}.reels{min-height:255px}.lever,.jackpot{display:none}.controls{gap:5px;padding:8px 6px}.controls button{width:60px;min-height:56px;border-width:2px;border-radius:13px;font-size:10px}.controls .spin{min-width:122px;padding:12px 14px;border-width:3px}.gallery{grid-template-columns:repeat(4,1fr)}}
+
+/* Premium symbol art and win effects */
+.symbol{overflow:hidden;background:radial-gradient(circle,#fffef8,#f3dfbd)}
+.symbol img{display:block;width:82%;height:82%;object-fit:contain;filter:drop-shadow(0 7px 3px #5e321c55);transition:transform .25s}
+.seven img,.bar img{width:88%;height:88%}
+.rolling .symbol{animation:none}
+.rolling .symbol img{animation:newBlur .18s linear infinite}
+@keyframes newBlur{50%{transform:translateY(18px) scaleY(.78);filter:blur(3px)}}
+.celebrate .symbol img{animation:symbolPop .48s cubic-bezier(.2,1.6,.4,1)}
+@keyframes symbolPop{50%{transform:scale(1.13) rotate(-2deg)}}
+.winGlow{animation:machineWin .55s ease-in-out infinite alternate}
+@keyframes machineWin{to{box-shadow:inset 0 0 0 7px #fff28a,0 0 34px #ffe600,0 16px #4b093f}}
+.bulbs{position:absolute;inset:3px;border-radius:48px;pointer-events:none;background:radial-gradient(circle,#fff8a5 0 3px,#ff9d00 4px 6px,transparent 7px) top/44px 18px repeat-x;filter:drop-shadow(0 0 5px #ffdf00)}
+.overlay{z-index:3}
+.confetti{position:absolute;z-index:8;inset:-30px 0 0;overflow:hidden;pointer-events:none}
+.confetti i{position:absolute;top:-10px;width:10px;height:20px;border-radius:3px;animation:confettiFall 1.7s linear infinite}
+@keyframes confettiFall{to{transform:translateY(520px) rotate(540deg);opacity:.15}}
+.values span{display:flex;align-items:center;gap:5px;padding:6px 11px}
+.values img{width:40px;height:40px;object-fit:contain}
+
+/* Desktop fit: keep the whole cabinet inside one 100% zoom viewport. */
+@media (min-width:761px){
+  .game{height:100vh;min-height:640px;padding:8px 34px 12px;overflow:hidden}
+  header{max-width:1040px;height:82px}
+  h1{font-size:46px;padding:6px 30px}
+  .counter{min-width:140px;padding:5px 18px}.counter b{font-size:24px}
+  .right .counter{min-width:105px}.sound{width:54px;height:54px;font-size:23px}
+  .machine{width:min(920px,calc(100vw - 190px));margin-top:14px;padding:12px;border-width:6px;border-radius:38px}
+  .window{border-width:6px;border-radius:22px}
+  .reels{min-height:0;height:clamp(330px,50vh,430px)}
+  .result{margin:9px auto 3px;min-height:25px;font-size:16px}
+  .controls{max-width:730px;padding:8px 12px;gap:14px;border-width:4px}
+  .controls button{width:82px;min-height:58px;border-width:3px;font-size:12px}
+  .controls .spin{min-width:210px;padding:9px 28px;font-size:44px}
+  .lineToggle{margin-top:8px;padding:5px 18px;font-size:12px}
+  .lever{right:-54px;transform:scale(.82)}.jackpot{left:-104px;transform:scale(.82)}
+}
+
+/* Animate only composited image layers; never resize or repaint the cabinet. */
+.rolling .reel{will-change:transform;animation:reelShake .12s linear infinite alternate}
+.rolling .reel:nth-child(2){animation-delay:-.025s}.rolling .reel:nth-child(3){animation-delay:-.05s}.rolling .reel:nth-child(4){animation-delay:-.075s}.rolling .reel:nth-child(5){animation-delay:-.1s}
+@keyframes reelShake{from{transform:translate3d(0,-3px,0)}to{transform:translate3d(0,3px,0)}}
+
+/* Keep all three symbol rows inside the fixed-height reel window. */
+.reel{grid-template-rows:repeat(3,minmax(0,1fr));min-height:0;overflow:hidden}
+.symbol{min-height:0;height:100%;padding:5px}
+.symbol img{width:78%;height:72%;max-width:100%;max-height:100%;object-fit:contain}
+.seven img,.bar img{width:82%;height:76%}
+
+/* Real vertical reel strips: each column rolls and stops in sequence. */
+.reel{display:block;position:relative}
+.reelTrack{display:grid;height:100%;grid-template-rows:repeat(3,minmax(0,1fr));transform:translate3d(0,0,0)}
+.rolling .reel{animation:none;will-change:auto}
+.rolling .reelTrack{height:400%;grid-template-rows:repeat(12,minmax(0,1fr));will-change:transform;animation:reelRoll .85s cubic-bezier(.12,.62,.18,1) both}
+.rolling .reel:nth-child(2) .reelTrack{animation-duration:.95s}
+.rolling .reel:nth-child(3) .reelTrack{animation-duration:1.05s}
+.rolling .reel:nth-child(4) .reelTrack{animation-duration:1.15s}
+.rolling .reel:nth-child(5) .reelTrack{animation-duration:1.25s}
+.rolling .symbol img{animation:none;filter:drop-shadow(0 7px 3px #5e321c55)}
+@keyframes reelRoll{0%{transform:translate3d(0,0,0)}78%{transform:translate3d(0,-72%,0)}90%{transform:translate3d(0,-74.2%,0)}100%{transform:translate3d(0,-75%,0)}}
